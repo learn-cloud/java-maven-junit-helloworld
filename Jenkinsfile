@@ -50,6 +50,15 @@ pipeline{
             }
         }  
 
+        stage('Deployment') {
+            steps {
+                script {
+                        sh 'sudo sh /root/deploy.sh'
+                }
+                
+            }
+        }  
+
 		
     }
 }
