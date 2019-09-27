@@ -2,7 +2,7 @@ def branch
 
 def getDeploymentEnvironment() {
     if (env.BRANCH_NAME.startsWith('PR-')) {
-        return 'pr'
+        return 'PR'
     } else {
 	    return env.BRANCH_NAME
     }   
