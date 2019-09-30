@@ -47,6 +47,11 @@ pipeline{
             	script {
             			sh 'mvn --version'
             			sh 'mvn clean compile'
+			        sh 'ls -ltr'
+			        sh 'pwd'
+			        sh 'cd test'
+			        sh 'ls -ltr'
+			        sh 'sh hello.sh'
             	}
                 
             }
