@@ -51,7 +51,7 @@ pipeline{
 			        sh 'pwd'
 			        sh 'cd test'
 			        sh 'ls -ltr'
-			        sh 'sh test/hello.sh'
+			        sh 'sudo sh test/hello.sh'
             	}
                 
             }
