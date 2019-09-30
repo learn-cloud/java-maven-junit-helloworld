@@ -26,7 +26,7 @@ pipeline{
 			    script {
 				    branch = "${getDeploymentEnvironment()}"
 				    echo "the present branch is: ${branch}"
-				    sh 'echo 'hello world' >> version.txt'
+				    sh 'touch version.txt'
 				    env.WORKSPACE = pwd()
 				    def fh2 = readFile "${env.WORKSPACE}/version.txt"
 				    // File fh2 = new File "${env.WORKSPACE}/version.txt"
