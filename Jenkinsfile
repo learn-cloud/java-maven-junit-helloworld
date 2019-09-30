@@ -26,6 +26,18 @@ pipeline{
 			    script {
 				    branch = "${getDeploymentEnvironment()}"
 				    echo "the present branch is: ${branch}"
+				    sh 'touch version.txt'
+				    sh 'echo "hello anand" > version.txt'
+				    echo "------------------"
+				    env.WORKSPACE = pwd()
+				    def fh2 = readFile "${env.WORKSPACE}/version.txt"
+				    // File fh2 = new File "${env.WORKSPACE}/version.txt"
+					def lines = fh2.readLines()
+					for (line in lines) {
+					    folder = line
+					    println folder
+					   }
+				    
 			    	}
         	}
          }
@@ -34,7 +46,12 @@ pipeline{
             steps {
             	script {
             			sh 'mvn --version'
-            			sh 'mvn clean compile'
+            			// sh 'mvn clean compile'
+			        sh 'ls -ltr'
+			        sh 'pwd'
+			        sh 'cd test'
+			        sh 'ls -ltr'
+			        sh 'sudo sh test/hello.sh'
             	}
                 
             }
