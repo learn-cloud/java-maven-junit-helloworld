@@ -85,10 +85,7 @@ pipeline{
         stage('Master Deployment') {
 
             when {
-                expression { env.BRANCH_NAME == 'master' }
-            }
-	    when {
-                expression { branch != 'PR' }
+                expression { env.BRANCH_NAME == 'master' && branch != 'PR' }
             }
 
             steps {
