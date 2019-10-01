@@ -87,6 +87,9 @@ pipeline{
             when {
                 expression { env.BRANCH_NAME == 'master' }
             }
+	    when {
+                expression { branch != 'PR' }
+            }
 
             steps {
                 script {
