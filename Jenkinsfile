@@ -89,7 +89,7 @@ pipeline{
             when {
         		allOf{
                    		// expression { name == 'test'}
-				expression { branch == 'PR'}
+				expression { branch != 'PR'}
 			}
             }
 
