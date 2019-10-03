@@ -87,12 +87,10 @@ pipeline{
         stage('PRR Deployment') {
 
             when {
-		 anyOf{
         		allOf{
-                   		expression { name == 'test'}
-				expression { branch != 'PR'}
+                   		// expression { name == 'test'}
+				expression { branch == 'PR'}
 			}
-		 }
             }
 
             steps {
