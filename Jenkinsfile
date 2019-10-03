@@ -88,7 +88,7 @@ pipeline{
 
             when {
         		allOf{
-                   		// expression { name == 'test'}
+                   		expression { name == 'test'}
 				expression { branch != 'PR'}
 			}
             }
