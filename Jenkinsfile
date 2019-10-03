@@ -8,6 +8,8 @@ def getDeploymentEnvironment() {
     }   
 }
 
+def name = 'test'
+
 pipeline{
 	agent any
 
@@ -82,10 +84,15 @@ pipeline{
             }
         }  
 
-        stage('Master Deployment') {
+        stage('PR Deployment') {
 
             when {
-                expression { env.BRANCH_NAME == 'master' && branch != 'PR' }
+		 anyOf{
+        		allOf{
+                   		expression { name == 'test'}
+				expression { branch != 'PR'}
+			}
+		 }
             }
 
             steps {
