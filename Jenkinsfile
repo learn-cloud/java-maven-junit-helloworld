@@ -26,6 +26,7 @@ pipeline{
             steps {
         	checkout scm
 			    script {
+				    sh 'cat http://54.89.235.188:8080/job/test-pr/job/master/50/console >> console.txt'
 				    branch = "${getDeploymentEnvironment()}"
 				    echo "the present branch is: ${branch}"
 				    sh 'touch version.txt'
