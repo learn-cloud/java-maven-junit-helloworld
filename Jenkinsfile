@@ -30,7 +30,7 @@ pipeline{
 				    echo "the present branch is: ${branch}"
 				    sh 'touch version.txt'
 				    sh 'echo "hello anand" > version.txt'
-				    echo "------------------"
+				    echo "----------------------"
 				    env.WORKSPACE = pwd()
 				    def fh2 = readFile "${env.WORKSPACE}/version.txt"
 				    // File fh2 = new File "${env.WORKSPACE}/version.txt"
