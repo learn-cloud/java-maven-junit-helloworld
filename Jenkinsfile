@@ -84,7 +84,7 @@ pipeline{
             }
         }  
 
-        stage('PR Deployment') {
+        stage('PRR Deployment') {
 
             when {
 		 anyOf{
